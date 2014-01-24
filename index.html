@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="no-js"><!--<![endif]--><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>SuperTable Demo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="styles/a530f6b0.main.css">
+        <script src="scripts/vendor/be96b27f.modernizr.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="layout-container"></div>
+
+        <div class="container">
+          <hr>
+          Версия:
+          <span id="app_version">?</span>
+        </div>
+        <script src="scripts/720b7546.main.js"></script>
+        <script type="text/javascript">
+          var options = {
+              tableUrl: 'table.html', 
+              pageUrl: 'contents.html',
+              el: '#layout-container' 
+          };
+          if (typeof require == 'function') {
+            // running in development
+            require(['main'], function(SuperTable){
+              SuperTable.initialize(options);
+              document.getElementById('app_version').textContent = SuperTable.version;
+            });
+          } else {
+            // running in production
+            window.SuperTable.initialize(options);
+            document.getElementById('app_version').textContent = window.SuperTable.version;
+          }
+        </script>
+
+
+</body></html>
